@@ -4,14 +4,19 @@ import SearchBar from '../../components/SearchBar';
 
 const tasks = {
   backlog: [
-    { title: 'Settle Outstanding Payments', description: 'Lorem ipsum dolor sit amet...', tag: 'OZ', status: 'today', statusText: 'Happening in an hour' },
+    { title: 'Settle Outstanding Payments', description: 'Lorem ipsum dolor sit amet...', tag: 'OZ', status: 'late', statusText: 'An hour ago' },
     { title: 'Arrange for venue with clients', description: 'Urgent, make sure to do ASAP', tag: 'LE', status: 'late', statusText: 'Two days ago' },
+    { title: 'Prepare for upcoming meeting', description: 'Lorem ipsum dolor sit amet...', tag: 'AM', status: 'late', statusText: 'Last week' },
   ],
   todo: [
     { title: 'Eget porttitor lorem', description: 'Lorem ipsum dolor sit amet...', tag: 'AM', status: 'today', statusText: 'Today' },
+    { title: 'Ac tristique libero volutpat', description: 'Lorem ipsum dolor sit amet...', tag: 'LE', status: 'upcoming', statusText: 'Tomorrow' },
+    { title: 'Eget porttitor lorem', description: 'Lorem ipsum dolor sit amet...', tag: 'AM', status: 'upcoming', statusText: 'In 2 days' },
   ],
   done: [
-    { title: 'Ac tristique libero volutpat', description: 'Lorem ipsum dolor sit amet...', tag: 'LE', status: 'upcoming', statusText: 'A week ago' },
+    { title: 'Ac tristique libero volutpat', description: 'Lorem ipsum dolor sit amet...', tag: 'LE', status: 'done', statusText: 'A week ago' },
+    { title: 'Phasellus iaculis neque', description: 'Lorem ipsum dolor sit amet...', tag: 'OZ', status: 'done', statusText: 'Last Tuesday' },
+    { title: 'Facilisis in pretium nisl', description: 'Lorem ipsum dolor sit amet...', tag: 'AM', status: 'done' },
   ],
 };
 
