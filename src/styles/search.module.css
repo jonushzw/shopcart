@@ -7,31 +7,44 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #ddd;
     width: 100%;
-    font-family: 'Inter, sans-serif'; /* Retain the font family */
+    font-family: 'Inter, sans-serif';
 }
 
 .logo {
-    width: 100px; /* Adjust the width as needed */
+    width: 100px;
     height: auto;
-    margin-right: 20px; /* Add some space between the logo and the search bar */
+    margin-right: 20px;
 }
 
 .separator {
-    height: 40px; /* Adjust the height as needed */
+    height: 40px;
     width: 1px;
     background-color: #ddd;
-    margin-right: 20px; /* Add some space between the separator and the search bar */
+    margin-right: 20px;
+}
+
+.searchContainer {
+    position: relative;
+    flex: 1;
+    margin: 0 20px 0 0;
 }
 
 .searchBar {
-    flex: 1;
-    margin: 0 20px 0 0; /* Adjusted margin to remove right margin */
-    padding: 10px;
+    width: 100%;
+    padding: 10px 40px 10px 10px;
     border-radius: 20px;
     border: 1px solid #ddd;
     font-size: 16px;
     outline: none;
-    width: 100%; /* Added width to span the whole horizontal length */
+}
+
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
 }
 
 .userSection {
