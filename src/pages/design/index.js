@@ -33,7 +33,7 @@ const Home = () => {
                 <p>{task.description}</p>
                 <span className={styles.tag}>{task.tag}</span>
                 {task.statusText && (
-                  <span className={styles[`status${task.status.charAt(0).toUpperCase() + task.status.slice(1)}`]}>
+                  <span className={`${styles.statusText} ${styles[`status${task.status.charAt(0).toUpperCase() + task.status.slice(1)}`]}`}>
                     {task.statusText}
                   </span>
                 )}
