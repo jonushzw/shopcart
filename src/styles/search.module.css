@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    font-family: 'Inter, sans-serif'; /* Retain the font family */
+}
+
+.logo {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 20px; /* Add some space between the logo and the search bar */
+}
+
+.separator {
+    height: 40px; /* Adjust the height as needed */
+    width: 1px;
+    background-color: #ddd;
+    margin-right: 20px; /* Add some space between the separator and the search bar */
+}
+
+.searchBar {
+    flex: 1;
+    margin: 0 20px 0 0; /* Adjusted margin to remove right margin */
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    width: 100%; /* Added width to span the whole horizontal length */
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
