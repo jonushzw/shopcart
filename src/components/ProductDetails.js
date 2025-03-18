@@ -39,10 +39,10 @@ const ProductDetails = () => {
                                 <h2 className='text-4xl font-bold mb-5'>{title}</h2>
                                 <p className='text-2xl text-gray-700 mb-5'>${price.toFixed(2)}</p>
                                 <p className='text-lg text-gray-600 mb-5'>{description}</p>
-                                <button onClick={() => addToCart(product)} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800'>
+                                <button onClick={() => addToCart(product)} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800 uppercase font-semibold'>
                                     Add to cart
                                 </button>
-                                <button onClick={() => navigate('/shop/product')} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800'>
+                                <button onClick={() => navigate('/shop/product')} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800 font-semibold'>
                                     Back to Products
                                 </button>
                             </div>

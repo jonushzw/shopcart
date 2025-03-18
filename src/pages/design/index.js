@@ -1,6 +1,6 @@
 import styles from '../../styles/design.module.css';
 import React from 'react';
-import SearchBar from '../../components/SearchBar';
+import SearchBar from '../../components/design/SearchBar';
 
 const tasks = {
   backlog: [
