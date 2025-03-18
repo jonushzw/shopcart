@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
-        <section className="hero pt-24 pb-10 bg-blue-100">
+        <section className="hero pt-24 pb-10 bg-gray-900">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center ">
                     <div className="p-8 border border-blue-200 shadow-lg rounded-lg transition-transform transform hover:scale-105 duration-300 bg-blue-50">
