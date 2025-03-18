@@ -5,7 +5,7 @@ import { IoMdArrowForward } from "react-icons/io";
 const Sidebar = () => { 
     const { sideBar, handleClose } = useContext(SideBarContext);
     return (
-        <div className={`fixed top-0 h-full shadow-2xl bg-white z-20 px-4 lg:px-[35px] transition-transform duration-300 ${sideBar ? 'translate-x-0' : 'translate-x-full'} w-full md:w-[35vw] xl:max-w-[30vw]`}>
+        <div className={`fixed top-0 right-0 h-full shadow-2xl bg-white z-20 px-4 lg:px-[35px] sidebar ${sideBar ? 'sidebar-open' : 'sidebar-closed'} w-full md:w-[35vw] xl:max-w-[30vw]`}>
             <button onClick={handleClose} className="absolute top-4 right-4">
                 <IoMdArrowForward className="text-4xl" />
             </button>
