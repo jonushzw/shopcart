@@ -4,7 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import { ProductContext } from '../contexts/ProductContext';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 const ProductDetails = () => {
     const { id } = useParams();
