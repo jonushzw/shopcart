@@ -8,7 +8,7 @@ const Product = ({ product }) => {
   const { id, title, price, image, category } = product;
 
   return (
-    <div className='flex flex-col items-center mb-8 font-inter w-full'>
+    <div className='flex flex-col items-center mb-8 w-full'>
       <div className='border border-gray-200 rounded-lg overflow-hidden group transition relative bg-white p-4 w-full'>
         <div className='relative w-full flex justify-center items-center'>
           <img
@@ -30,10 +30,10 @@ const Product = ({ product }) => {
           </div>
         </div>
       </div>
-      <div className='mt-3 w-full text-center'>
-        <p className='text-gray-500 text-sm capitalize'>{category}</p> {/* Category */}
-        <h3 className='text-base font-semibold text-black'>{title}</h3> {/* Product Title */}
-        <p className='text-black font-semibold text-base'>${price}</p> {/* Price */}
+      <div className='mt-3 w-full'>
+        <p className='text-gray-500 text-sm capitalize'>{category}</p> 
+        <h3 className='text-base font-semibold text-black'>{title}</h3>
+        <p className='text-black font-semibold text-base'>${price}</p>
       </div>
     </div>
   );
