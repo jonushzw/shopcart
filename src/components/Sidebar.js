@@ -23,7 +23,7 @@ const Sidebar = () => {
             <button onClick={handleClose} className="absolute top-4 right-4">
                 <IoMdArrowForward className="text-4xl" />
             </button>
-            <div>
+            <div className="mt-16">
                 <div className="flex items-center justify-between py-6 border-b border-gray-200">
                     <div className="text-lg font-semibold uppercase">Shopping Bag ({cart.length})</div>
                 </div>
@@ -42,17 +42,12 @@ const Sidebar = () => {
                     </button>
                 </div>
             </div>
-            <div className="mt-auto">
-                <div className="border-t border-gray-200 py-4">
-                    <button onClick={handleClose} className="w-full bg-gray-200 text-gray-800 py-3 hover:bg-gray-400 transition-colors duration-300 font-semibold mb-2">
-                        Return to Products
+            <div className="py-4">
+                <Link to="/checkout" className="w-full block">
+                    <button className="w-full bg-black text-white py-2 hover:bg-green-700 transition-colors duration-300 font-semibold">
+                        Checkout
                     </button>
-                    <Link to="/checkout" className="w-full block">
-                        <button className="w-full bg-black text-white py-3 hover:bg-green-700 transition-colors duration-300 font-semibold">
-                            Checkout
-                        </button>
-                    </Link>
-                </div>
+                </Link>
             </div>
             {showPopup && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30">
