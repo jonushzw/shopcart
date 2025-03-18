@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import DesignPage from './pages/design';
 import ShopPage from './pages/shop/Home';
 import styles from './styles/home.module.css';
-import { useState } from 'react';
+import ProductDetails from './components/ProductDetails';
 
 function Home() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/shop" element={<ShopPage />} />
+        <Route path="/shop/product/:id" element={<ProductDetails/>} />
       </Routes>
     </Router>
   );

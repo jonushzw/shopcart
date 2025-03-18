@@ -25,7 +25,7 @@ const Product = ({ product }) => {
               <BsCartPlus className='text-xl' />
             </button>
             <Link 
-              to={`/product/${id}`} 
+              to={`/shop/product/${id}`} 
               className='w-10 h-10 bg-white flex justify-center items-center rounded-full shadow-lg hover:scale-110 transition duration-300'
             >
               <BsEyeFill className='text-xl text-black-500' />
