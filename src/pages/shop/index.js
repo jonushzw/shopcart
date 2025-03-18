@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../../components/Navbar'; // Import the Navbar component
+import Navbar from '../../components/Navbar3'; // Import the Navbar component
 import styles from '../../styles/shop.module.css';
 
 const ShopPage = () => {
