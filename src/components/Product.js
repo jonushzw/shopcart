@@ -1,40 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsEyeFill, BsPlus } from 'react-icons/bs';
+import { BsEyeFill, BsCartPlus } from 'react-icons/bs';
 
 const Product = ({ product }) => {
   if (!product) {
     return null;
   }
 
-  const { id, title, price, image } = product;
+  const { id, title, price, image, category } = product;
 
   return (
-    <div className='border border-gray-200 rounded-lg overflow-hidden group transition'>
-      <div className='w-full h-full flex flex-col items-center'>
-        {/* Product Image */}
-        <div className='w-[200px] mx-auto flex justify-center items-center'>
+    <div className='flex flex-col items-center mb-8 font-inter'>
+      {/* Product Card with Image and Hover Actions */}
+      <div className='border border-gray-200 rounded-lg overflow-hidden group transition relative bg-white p-4'>
+        <div className='relative w-[200px] flex justify-center items-center'>
           <img
-            className='max-h-[160px] group-hover:scale-110 transition duration-300'
+            className='max-h-[200px] group-hover:scale-110 transition duration-300'
             src={image}
             alt={title}
           />
-        </div>
-        {/* Product Details */}
-        <div className='p-4 text-center'>
-          <h3 className='text-lg font-semibold'>{title}</h3>
-          <p className='text-gray-500'>${price}</p>
-          <button className='mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
-            <Link to={`/shop/product/${id}`}>
-              <BsEyeFill className='inline-block' />
-              View
+
+          {/* Floating Buttons (Appear on Hover) */}
+          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-y-2">
+            {/* Add to Cart Button */}
+            <button className='w-10 h-10 bg-red-500 text-white rounded-full flex justify-center items-center shadow-lg hover:scale-110 transition duration-300'>
+              <BsCartPlus className='text-xl' />
+            </button>
+            {/* View Product Button */}
+            <Link 
+              to={`/product/${id}`} 
+              className='w-10 h-10 bg-white flex justify-center items-center rounded-full shadow-lg hover:scale-110 transition duration-300'
+            >
+              <BsEyeFill className='text-xl text-blue-500' />
             </Link>
-          </button>
-          <button className='mt-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300'>
-            <BsPlus className='inline-block' />
-            Add to Cart
-          </button>
+          </div>
         </div>
+      </div>
+
+      {/* Product Details BELOW the Card */}
+      <div className='mt-3'>
+        <p className='text-gray-500 text-sm capitalize'>{category}</p> {/* Category */}
+        <h3 className='text-base font-semibold text-black'>{title}</h3> {/* Product Title */}
+        <p className='text-black font-semibold text-base'>${price}</p> {/* Price */}
       </div>
     </div>
   );
