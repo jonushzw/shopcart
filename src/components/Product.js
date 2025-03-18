@@ -17,8 +17,7 @@ const Product = ({ product }) => {
             alt={title}
           />
           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-y-2">
-            {/* Add to Cart Button */}
-            <button onClick={() => addToCart(product, id)} className='w-10 h-10 bg-red-500 text-white rounded-full flex justify-center items-center shadow-lg hover:scale-110 transition duration-300'>
+            <button onClick={() => addToCart(product, 1)} className='w-10 h-10 bg-red-500 text-white rounded-full flex justify-center items-center shadow-lg hover:scale-110 transition duration-300'>
               <BsCartPlus className='text-xl' />
             </button>
             <Link 

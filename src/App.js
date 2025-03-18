@@ -6,6 +6,7 @@ import styles from './styles/home.module.css';
 import ProductDetails from './components/ProductDetails';
 import ShopLayout from './components/ShopLayout';
 import CheckoutPage from './components/CheckOutPage';
+import PaymentPage from './components/PaymentPage';
 
 function Home() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/shop/product" element={<ShopPage />} />
         <Route path="/shop/product/:id" element={<ProductDetails/>} />
         <Route path="/shop/checkout" element={<CheckoutPage />} />
+        <Route path="/shop/payment" element={<PaymentPage />} />
       </Routes>
     </Router>
   );
