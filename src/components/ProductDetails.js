@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { ProductContext } from '../contexts/ProductContext';
@@ -11,6 +11,7 @@ const ProductDetails = () => {
     const navigate = useNavigate();
     const { products } = useContext(ProductContext);
     const { addToCart } = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1);
 
     const product = products.find(product => {
         return product.id === parseInt(id);
@@ -22,7 +23,21 @@ const ProductDetails = () => {
         </section>
     }
 
-    const { title, price, image, description } = product;
+    const { title, price, image, description, category } = product;
+
+    const handleAddToCart = () => {
+        addToCart(product, quantity);
+    };
+
+    const increaseQuantity = () => {
+        setQuantity(quantity + 1);
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+        }
+    };
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -36,9 +51,18 @@ const ProductDetails = () => {
                                 <img src={image} alt={title} className='max-w-full max-h-96 object-cover rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105' />
                             </div>
                             <div className='flex flex-col justify-center'>
-                                <h2 className='text-4xl font-bold mb-5'>{title}</h2>
+                                <h2 className='text-4xl font-bold mb-2'>{title}</h2>
+                                <p className='text-lg text-gray-500 mb-5'>{category}</p>
                                 <p className='text-2xl text-gray-700 mb-5'>${price.toFixed(2)}</p>
-                                <button onClick={() => addToCart(product)} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800 uppercase font-semibold'>
+                                <div className='flex items-center mb-5'>
+                                    <label className='mr-3 text-lg font-semibold'>Quantity:</label>
+                                    <div className='flex items-center'>
+                                        <button onClick={decreaseQuantity} className='bg-gray-300 text-gray-700 px-3 py-1 rounded-l-lg'>-</button>
+                                        <span className='w-20 p-2 border-t border-b border-gray-300 text-center'>{quantity}</span>
+                                        <button onClick={increaseQuantity} className='bg-gray-300 text-gray-700 px-3 py-1 rounded-r-lg'>+</button>
+                                    </div>
+                                </div>
+                                <button onClick={handleAddToCart} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800 uppercase font-semibold'>
                                     Add to cart
                                 </button>
                                 <button onClick={() => navigate('/shop/product')} className='bg-black text-white px-5 py-3 mt-5 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:bg-gray-800 font-semibold'>
