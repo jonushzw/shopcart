@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 /*
 Cart Context used to manage the cart state and provide functions to add, remove, and update items in the cart.
 Simple context to add, remove, and update items in the cart.
@@ -7,7 +7,16 @@ Simple context to add, remove, and update items in the cart.
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    // Load cart from localStorage
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem('shopping-cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
+    
+    // Save cart to localStorage whenever it changes
+    useEffect(() => {
+        localStorage.setItem('shopping-cart', JSON.stringify(cart));
+    }, [cart]);
 
     const addToCart = (product, quantity) => {
         setCart((prevCart) => {
@@ -44,12 +53,24 @@ const CartContextProvider = ({ children }) => {
 
     const clearCart = () => {
         setCart([]);
+        localStorage.removeItem('shopping-cart');
     };
 
     const totalAmount = cart.reduce((total, item) => total + item.price * item.amount, 0);
+    
+    const itemAmount = cart.reduce((total, item) => total + item.amount, 0);
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart, clearCart, totalAmount }}>
+        <CartContext.Provider value={{ 
+            cart, 
+            addToCart, 
+            increaseQuantity, 
+            decreaseQuantity, 
+            removeFromCart, 
+            clearCart, 
+            totalAmount,
+            itemAmount
+        }}>
             {children}
         </CartContext.Provider>
     );
