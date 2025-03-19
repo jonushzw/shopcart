@@ -37,7 +37,7 @@ const ProductDetails = () => {
             </div>
         );
     }
-
+    
     const { title, price, image, description, category } = product;
 
     const handleAddToCart = () => {

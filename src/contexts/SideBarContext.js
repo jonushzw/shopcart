@@ -1,4 +1,7 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState,} from 'react';
+/*
+Simple context to manage the sidebar state and provide functions to open and close the sidebar.
+*/
 
 export const SideBarContext = createContext();
 

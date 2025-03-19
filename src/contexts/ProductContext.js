@@ -1,4 +1,8 @@
 import React, { useState, useEffect, createContext } from 'react';
+/*
+Product Context used to fetch products from the API and provide the products to the components.
+Simple context to fetch products from the API and provide the products to the components.
+*/
 
 export const ProductContext = createContext();
 

@@ -6,10 +6,11 @@ import { motion } from 'framer-motion';
 
 const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
-  const { id, title, price, image, category } = product;
+  const { id, title, price, image, category } = product; // Get the product details
   const [isWishlisted, setIsWishlisted] = useState(false);
   
   return (
+    // Product card
     <motion.div 
       className='bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow relative'
       whileHover={{ y: -5 }}

@@ -1,4 +1,8 @@
 import React, { createContext, useState } from 'react';
+/*
+Cart Context used to manage the cart state and provide functions to add, remove, and update items in the cart.
+Simple context to add, remove, and update items in the cart.
+*/
 
 export const CartContext = createContext();
 
