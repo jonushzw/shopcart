@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
+import { Outlet } from 'react-router-dom';
+import SideBarContextProvider from '../contexts/SideBarContext';
 
-const ShopLayout = ({ children }) => {
+const ShopLayout = () => {
   return (
-    <div>
-      <Header />
-      <main>{children}</main>
-    </div>
+    <SideBarContextProvider>
+      <Outlet />
+    </SideBarContextProvider>
   );
 };
 

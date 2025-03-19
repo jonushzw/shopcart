@@ -101,7 +101,6 @@ const Sidebar = () => {
                         </div>
                     </>
                 )}
-
                 <AnimatePresence>
                     {showPopup && (
                         <motion.div 
