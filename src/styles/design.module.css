@@ -1,28 +1,28 @@
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: 'Inter', sans-serif;
+}
+
 .container {
     width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-    font-family: 'Inter', sans-serif;
 }
 
 .column {
     width: 32%;
-    background: white;
+    background: #f0f0f0; /* Gray background for containers */
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Inter', sans-serif;
 }
 
 .card {
-    background: linear-gradient(135deg, #f3f4f6, #ffffff);
+    background: white; /* White background for cards */
     padding: 20px;
     margin: 10px 0;
-    border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Inter', sans-serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -36,13 +36,13 @@
 .card h3 {
     margin: 0 0 10px;
     font-size: 20px;
-    color: #333;
+    color: #666;
 }
 
 .card p {
     margin: 0 0 15px;
     font-size: 16px;
-    color: #666;
+    color: #868585;
 }
 
 .tag {
@@ -51,7 +51,6 @@
     border-radius: 50%;
     font-size: 14px;
     font-weight: bold;
-    font-family: 'Inter', sans-serif;
     color: white;
     text-align: center;
     width: 40px;
@@ -70,4 +69,4 @@
 .statusLate { color: red; }
 .statusToday { color: purple; }
 .statusUpcoming { color: green; }
-.statusDone { color: gray; }
+.statusDone { color: #9a9a9a; }

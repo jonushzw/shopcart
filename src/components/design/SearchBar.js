@@ -13,7 +13,7 @@ export default function SearchBar() {
     return (
         <header className={styles.header}>
             <Link to= '/'>
-                <img src="/ensign-logo.png" alt="Ensign Logo" className={styles.logo} />
+                <img src="/apple.png" alt="Ensign Logo" className={styles.logo} />
             </Link>
             <div className={styles.separator}></div>
             <div className={styles.searchContainer}>
