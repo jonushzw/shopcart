@@ -34,7 +34,7 @@
     padding: 15px 15px 15px 50px;
     border-radius: 20px;
     border: 1px solid #ddd;
-    font-size: 18px;
+    font-size: 16px;
     height: 50px;
     outline: none;
 }
@@ -108,7 +108,7 @@
         transform: translateY(-10px);
     }
     to {
-        opacity: 1;
+        opacity: 0.5;
         transform: translateY(0);
     }
 }
