@@ -29,8 +29,6 @@ const Header = () => {
             Ensign
           </div>
         </Link>
-
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           
           <nav className="flex space-x-6">
@@ -47,8 +45,6 @@ const Header = () => {
             )}
           </div>
         </div>
-        
-        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
           <div onClick={() => setSideBar(!sideBar)} className="mr-4 relative">
             <BsCart3 className="text-2xl" />
@@ -63,8 +59,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-      
-      {/* Mobile Menu */}
       {mobileMenu && (
         <div className="md:hidden bg-white shadow-md">
           <div className="container mx-auto px-4 py-3">      
