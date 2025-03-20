@@ -34,6 +34,8 @@ The product details page was implemented as instructed and focused on displaying
 ## Cart Sidebar (Sidebar.js)
 The cart page was designed for easy management of cart items, popping out as a sidebar for quick convenience.
 
+Cart data still persists even after browser refreshes/closes. Webpage data of cart stored in local storage.
+
 - **Item List**
     * Each item displays an image, title, price, and quantity.
     * Quantity can be adjusted with increment/decrement buttons.
@@ -63,14 +65,36 @@ The cart page was designed for easy management of cart items, popping out as a s
 
 - **Payment Page**
     * Designed it based on typical e-commerce sites.
-    * Includes total net amount and relevant payment options, all submitted as a form.2
+    * Includes total net amount and relevant payment options, all submitted as a form.
 
 
 ## Technical Decisions
 
 ### Context for State Management
 
+React's built-in Context API was selected for managing the state. It provides a lightweight option that does not have to be dependent on other packages.
+
+- Reduce dependencies and bundle size
+- Simplify the state management architecture
+- Provide sufficient functionality for our specific needs
+- Improve maintainability with a more straightforward approach
+
+Three Contexts were implemented:
+1. **ProductContext**: Manages product data and fetches the product data from FakeStoreAPI
+2. **CartContext:**: Handles all cart operations(add, remove, clear, update quantities) and also keeps a local storage of cart data to persist even when browser closes/refreshes.
+3. **SideBarContext** Controls whether the sidebar is open or closed.
+
 ### Framer Motion for Animations (Improved UI design)
+
+- **Reasoning**: Framer Motion was chosen for more responsive animations
+    * Supports gestures and responsive animations
+    * Makes complex animations more maintainable than CSS-only solutions
+
+Implemented Framer Motion for a better user experience. Viewed tutorial on the basics and revamped the website design to offer a more modern look:
+
+### Before
+
+### After
 
 ### Testing with React Testing Library
 
