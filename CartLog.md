@@ -92,6 +92,13 @@ Three Contexts were implemented:
 
 Implemented Framer Motion for a better user experience. Viewed tutorial on the basics and revamped the website design to offer a more modern look:
 
+### Before and After
+<p align="center">
+  <img src="public/Screenshot 2025-03-20 at 5.23.05 PM.png" alt="Image 1" width="300"/>
+  <img src="public/Screenshot 2025-03-20 at 5.24.21 PM.png" alt="Image 2" width="300"/>
+</p>
+
+
 ### Testing with React Testing Library
 - React Testing Library encourages testing behavior over implementation details
 - Did component-based testing that were essential
