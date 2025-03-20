@@ -1,5 +1,6 @@
 # ShoppingCart
 
+## Check  `DesignLog.md` and `CartLog.md` for documentation about technical decisions and assumptions
 ### Features
  - Product Browsing: Filter products by category and price range
  - Search Functionality: Search products by name or description
