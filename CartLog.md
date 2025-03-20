@@ -92,11 +92,19 @@ Three Contexts were implemented:
 
 Implemented Framer Motion for a better user experience. Viewed tutorial on the basics and revamped the website design to offer a more modern look:
 
-### Before
-
-### After
-
 ### Testing with React Testing Library
+- React Testing Library encourages testing behavior over implementation details
+- Did component-based testing that were essential
+- Tested components of typical user workflow (searching, filtering)
+- Mocked up incompatible packages
 
 ## Assumptions
 
+### User Experience
+- **Main Product Page**: I assumed users prefer filtering and searching over extensive pagination, so we prioritised filter controls. Understand in the future with more products instead of an external API, pagination is a viable option.
+- **Purchase Flow**: Allowed users to add directly to cart in the product page through a cart button on top of going into the product details page.
+
+### Technical Assumptions
+- **API Integration**: Designed the state management with the assumption that product data would eventually come from an external API or a connected database, making the contexts serve as data fetching layers to manage the data.
+- **Performance**: Ass the products fetched from the API were <= 20, client-side filtering and searching was viable. For larger catalogs, server-side search would be preferable.
+- **Future Scalability**: Adopted a component-based abstraction so that components can be added at any point in the future. Designed to easily incorporate things like user authentication, admin control, payment gateways, proper backend etc. in the future.
