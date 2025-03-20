@@ -7,7 +7,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 2px solid #ddd;
     width: 100%;
-    font-family: 'Inter, sans-serif';
+    font-family: 'Roboto, sans-serif';
+    border-radius: 0 0 12px 12px;
 }
 
 .logo {
@@ -37,6 +38,8 @@
     font-size: 16px;
     height: 50px;
     outline: none;
+    font-family: 'Roboto, sans-serif';
+    color: #C5CACD;
 }
 
 .searchIcon {
@@ -66,7 +69,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-right: 10px;
     font-weight: bold;
-    color: #333;
+    color: #646678;
 }
 
 .avatar {
@@ -95,7 +98,7 @@
 .dropdownMenu li {
     padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Inter, sans-serif';
+    font-family: 'Roboto, sans-serif';
 }
 
 .dropdownMenu li:hover {

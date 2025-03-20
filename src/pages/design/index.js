@@ -31,7 +31,7 @@ const Home = () => {
       <div className={styles.container}>
         {Object.entries(tasks).map(([section, taskList]) => (
           <div key={section} className={styles.column}>
-            <h2>{section.toUpperCase()}</h2>
+            <h2 className={styles.columnHeader}>{section.charAt(0).toUpperCase() + section.slice(1)}</h2>
             {taskList.map((task, index) => (
               <div key={index} className={styles.card}>
                 <h3>{task.title}</h3>
