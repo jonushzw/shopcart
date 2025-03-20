@@ -63,7 +63,7 @@ The cart page was designed for easy management of cart items, popping out as a s
 
 - **Payment Page**
     * Designed it based on typical e-commerce sites.
-    * Includes total net amount and relevant payment options, all submitted as a form.
+    * Includes total net amount and relevant payment options, all submitted as a form.2
 
 
 ## Technical Decisions
