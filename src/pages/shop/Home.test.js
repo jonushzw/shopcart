@@ -94,7 +94,7 @@ describe('ShopPage', () => {
     expect(screen.getByTestId("header")).toBeInTheDocument();
     expect(screen.getByTestId("sidebar")).toBeInTheDocument();
     expect(screen.getByTestId("footer")).toBeInTheDocument();
-    expect(screen.getByText(/Discover Trending/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ensign Shop/i)).toBeInTheDocument();
   });
 
   test('search functionality works', () => {
