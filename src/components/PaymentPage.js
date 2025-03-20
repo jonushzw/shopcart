@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { FaCreditCard, FaCcAmex, FaPaypal } from 'react-icons/fa';
 import { FaGratipay } from 'react-icons/fa';
 import { BsShieldCheck, BsLock } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const PaymentPage = () => {
     const { totalAmount } = useContext(CartContext);
@@ -37,12 +38,16 @@ const PaymentPage = () => {
                             <div className="w-full max-w-3xl flex items-center">
                                 <div className="flex-1">
                                     <div className="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-semibold mx-auto">1</div>
+                                    <Link to ="/shop/product">
                                     <p className="text-center mt-2 text-sm font-medium text-emerald-600">Cart</p>
+                                    </Link>
                                 </div>
                                 <div className="flex-1 border-t-2 border-emerald-600"></div>
                                 <div className="flex-1">
                                     <div className="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-semibold mx-auto">2</div>
-                                    <p className="text-center mt-2 text-sm font-medium text-emerald-600">Shipping</p>
+                                    <Link to ="/shop/checkout">
+                                    <p className="text-center mt-2 text-sm font-medium text-emerald-600">Checkout</p>
+                                    </Link>
                                 </div>
                                 <div className="flex-1 border-t-2 border-emerald-600"></div>
                                 <div className="flex-1">
