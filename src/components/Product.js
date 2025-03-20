@@ -4,11 +4,20 @@ import { BsCartPlus, BsHeart, BsHeartFill } from 'react-icons/bs';
 import { CartContext } from '../contexts/CartContext';
 import { motion } from 'framer-motion';
 
-const Product = ({ product }) => {
+const Product = ({ product, onAddToCart }) => {
   const { addToCart } = useContext(CartContext);
-  const { id, title, price, image, category } = product; // Get the product details
+  const { id, title, price, image, category } = product;
   const [isWishlisted, setIsWishlisted] = useState(false);
   
+  const handleAddToCart = () => {
+    // Pass product and quantity of 1 (default)
+    addToCart(product, 1);
+    
+    if (onAddToCart) {
+      onAddToCart(product);
+    }
+  };
+
   return (
     // Product card
     <motion.div 
@@ -54,7 +63,7 @@ const Product = ({ product }) => {
               <span className="text-xs text-red-500 font-medium">Saved</span>
             )}
             <button 
-              onClick={() => addToCart(product, 1)} 
+              onClick={handleAddToCart}
               className='flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full shadow hover:bg-blue-600 transition'
             >
               <BsCartPlus className='text-xl' />

@@ -4,7 +4,7 @@ import Product from '../../components/Product';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { FiFilter, FiStar, FiSearch } from 'react-icons/fi';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Sidebar from '../../components/Sidebar';
 
 const ShopPage = () => {
@@ -15,6 +15,7 @@ const ShopPage = () => {
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [showFilters, setShowFilters] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [notification, setNotification] = useState({ show: false, product: null });
 
   useEffect(() => {
     setFilteredProducts(products);
@@ -22,6 +23,15 @@ const ShopPage = () => {
     const uniqueCategories = ['all', ...new Set(products.map(item => item.category))];
     setCategories(uniqueCategories);
   }, [products]);
+
+  const handleProductAdded = (product) => {
+    setNotification({ show: true, product });
+    
+    // Automatically hide the notification after 3 seconds
+    setTimeout(() => {
+      setNotification({ show: false, product: null });
+    }, 3000);
+  };
 
   const handleSearch = (searchTerm) => {
     setSearchTerm(searchTerm);
@@ -59,7 +69,40 @@ const ShopPage = () => {
     <div className="flex flex-col min-h-screen">
       <Header onSearch={handleSearch} />
       <Sidebar />
-      
+
+      <AnimatePresence>
+        {notification.show && notification.product && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-20 right-4 z-50 bg-green-50 border-l-4 border-green-500 p-4 shadow-lg rounded-r-lg max-w-sm"
+          >
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-sm font-medium text-green-800">Added to Cart!</h3>
+                <div className="mt-2 text-sm text-green-700">
+                  <p>{notification.product.title} has been added to your cart.</p>
+                </div>
+                <div className="mt-3">
+                  <button
+                    onClick={() => setNotification({ show: false, product: null })}
+                    className="text-sm text-green-700 hover:text-green-900 font-medium underline"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <main className="flex-1 pt-24">
         <div className="container mx-auto px-4">
           <motion.section 
@@ -101,15 +144,15 @@ const ShopPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    Discover Trending
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-300">
+                    Ensign Shop
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">
                       {" "}Products for You
                     </span>
                   </motion.h1>
                 </div>
                 <div className="w-full lg:w-1/2 relative">
                   <motion.div
-                    className="relative mx-auto" /* Removed z-20 */
+                    className="relative mx-auto"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
@@ -239,7 +282,7 @@ const ShopPage = () => {
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {filteredProducts.map((product) => (
-                    <Product key={product.id} product={product} />
+                    <Product key={product.id} product={product} onAddToCart={() => handleProductAdded(product)} />
                   ))}
                 </div>
               )}

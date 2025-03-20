@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import { BsCartPlus, BsHeart, BsHeartFill, BsStarFill, BsStarHalf } from 'react-icons/bs';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -16,6 +16,7 @@ const ProductDetails = () => {
     const [quantity, setQuantity] = useState(1);
     const [isWishlisted, setIsWishlisted] = useState(false);
     const [relatedProducts, setRelatedProducts] = useState([]);
+    const [notification, setNotification] = useState({ show: false });
 
     const product = products.find(product => {
         return product.id === parseInt(id);
@@ -40,10 +41,6 @@ const ProductDetails = () => {
     
     const { title, price, image, description, category } = product;
 
-    const handleAddToCart = () => {
-        addToCart(product, quantity);
-    };
-
     const increaseQuantity = () => {
         setQuantity(quantity + 1);
     };
@@ -54,11 +51,58 @@ const ProductDetails = () => {
         }
     };
 
+    const handleAddToCart = () => {
+        if (product) {
+          addToCart(product, quantity);
+          // Show notification
+          setNotification({ show: true });
+          
+          // Automatically hide the notification after 3 seconds
+          setTimeout(() => {
+            setNotification({ show: false });
+          }, 3000);
+        }
+      };
+
     return (
         <div className="flex flex-col min-h-screen bg-gray-50">
             <Header />
             <div className="flex flex-1">
                 <Sidebar />
+
+                <AnimatePresence>
+        {notification.show && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-20 right-4 z-50 bg-green-50 border-l-4 border-green-500 p-4 shadow-lg rounded-r-lg max-w-sm"
+          >
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-sm font-medium text-green-800">Added to Cart!</h3>
+                <div className="mt-2 text-sm text-green-700">
+                  <p>{quantity} of {product.title} added to your cart.</p>
+                </div>
+                <div className="mt-3 flex space-x-4">
+                  <button
+                    onClick={() => setNotification({ show: false })}
+                    className="text-sm text-green-700 hover:text-green-900 font-medium underline"
+                  >
+                    Continue Shopping
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
                 <main className="flex-1 pt-24 pb-12">
                     <div className="container mx-auto px-4">
                         <nav className="flex py-4 text-sm">
