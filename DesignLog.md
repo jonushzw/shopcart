@@ -40,8 +40,7 @@ The design provided in `pages/design/index.js` was strictly followed to use only
 
 ### React.js
 
-- **Reasoning**: React.js was chosen for its component-based architecture, which allows for reusable and maintainable code. It also provides a virtual DOM for efficient updates and rendering.
-- **State Management**: React's built-in state management was used for simplicity. For larger applications, a more robust state management solution like Redux could be considered.
+- **Reasoning**: React.js was chosen for its component-based architecture, which allows for reusable and maintainable code. Also to put both assignments together.
 
 ### React-Router
 
@@ -50,8 +49,11 @@ The design provided in `pages/design/index.js` was strictly followed to use only
 ### CSS Modules
 
 - **Reasoning**: Separated CSS Modules to individual components, preventing style conflicts and making the styles easier to maintain.
+    * **search.module.css**: Custom CSS styles to map respective sections of the Searchbar to different styling.
+    * **design.module.css**: Custom CSS styles to map respective sections of the Searchbar to different styling.
 
 ## Assumptions
 
 - The design provided in `design.png` was the primary reference for the implementation.
-
+- Custom CSS can be made, without using outside frameworks
+- Colours were fit as close as possible to design
