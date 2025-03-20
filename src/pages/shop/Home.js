@@ -47,8 +47,10 @@ const ShopPage = () => {
   const filterProducts = (search, category, maxPrice) => {
     const filtered = products.filter(product => {
       const matchesSearch = product.title.toLowerCase().includes(search.toLowerCase());
+
       const matchesCategory = category === 'all' || product.category === category;
       const matchesPrice = product.price <= maxPrice;
+
       return matchesSearch && matchesCategory && matchesPrice;
     });
     setFilteredProducts(filtered);
@@ -76,7 +78,7 @@ const ShopPage = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            className="fixed top-20 right-4 z-50 bg-green-50 border-l-4 border-green-500 p-4 shadow-lg rounded-r-lg max-w-sm"
+            className="fixed top-20 right-4 z-50 bg-green-50  border-green-500 p-4 border-l-4 shadow-lg rounded-r-lg max-w-sm"
           >
             <div className="flex items-start">
               <div className="flex-shrink-0">
@@ -102,7 +104,8 @@ const ShopPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
+      
+      {/* Hero section above products*/}
       <main className="flex-1 pt-24">
         <div className="container mx-auto px-4">
           <motion.section 
@@ -187,6 +190,7 @@ const ShopPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
+            {/* Search bar */}
             <div className="bg-white rounded-xl shadow-sm p-4">
               <div className="relative">
                 <input
@@ -207,7 +211,9 @@ const ShopPage = () => {
                 )}
               </div>
             </div>
-          </motion.div>          
+          </motion.div>     
+
+          {/* Filters */}     
           <div className="flex flex-col md:flex-row">
             <div className="md:hidden mb-4 flex justify-end">
               <button 
