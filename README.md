@@ -12,6 +12,7 @@
  2. Tailwind CSS
  3. Framer Motion
  4. React Testing Library
+ 5. FakeStoreAPI
 
 ## Instructions to Build and Run the Code
 
