@@ -196,17 +196,17 @@ describe('ShopPage', () => {
     
     renderWithContexts(<ShopPage />);
     
-    const filterButton = screen.getByText(/Filters/i).closest('button');
+    const filterButton = screen.getByRole('button', { name: /Filters/i });
     
     // Initially filters should be hidden on mobile
-    const asideBeforeClick = document.querySelector('aside');
+    const asideBeforeClick = screen.getByRole('complementary');
     expect(asideBeforeClick).toHaveClass('hidden');
     
     // Click to show filters
     fireEvent.click(filterButton);
     
     // Now filters should be visible
-    const asideAfterClick = document.querySelector('aside');
+    const asideAfterClick = screen.getByRole('complementary');
     expect(asideAfterClick).toHaveClass('block');
   });
 
