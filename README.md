@@ -37,7 +37,7 @@
     npm start
     ```
 
-5. Open your browser and navigate to `http://localhost:[available-host]` to view the application. Host number should appear in the terminal
+5. Open your browser and navigate to `http://localhost:[available-host]`, `http://localhost:[3000]` (default) to view the application. Host number should appear in the terminal
 
 ## Testing Notes
 During writing of tests, be aware of the following decisions:
